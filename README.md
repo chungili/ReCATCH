@@ -1,11 +1,11 @@
 # Introdcution
 ReCATCH package is applied to high-dimensional tensor classification modeling with heterogeneous covariates.
 # Install the package from GitHub
-1. Install the devtools package.
+1. Install the devtools package
 ```{R}
 install.packages("devtools")
 ````
-2. Load the devtools package.
+2. Load the devtools package
 ```{R}
 library(devtools)
 ````
@@ -15,7 +15,7 @@ install_github("chungili/ReCATCH")
 ````
 # An example
 ```{R}
-# generate data
+# Generate a training dataset
 set.seed(123)
 Sim_test<-GenCovTensor(q = 110, ng=c(500,500), pk = c(30,36,30), beta2 = 0.8, phi2 = 0.2, alpha2 = 0.5)
 Sim_train<-GenCovTensor(q = 110, ng=c(50,50), pk = c(30,36,30), beta2 = 0.8, phi2 = 0.2, alpha2 = 0.5)
