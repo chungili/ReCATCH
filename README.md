@@ -1,4 +1,4 @@
-# Introdcution
+# Introduction
 ReCATCH package is applied to high-dimensional tensor classification modeling with heterogeneous covariates.
 # Install the package from GitHub
 1. Install the devtools package
