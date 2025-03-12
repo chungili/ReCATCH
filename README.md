@@ -27,5 +27,6 @@ testU <- Sim_test$U
 testy <- Sim_test$y
 # fit the model
 out<-ReCatch(x=x, U=U, y=y, testx=testx, testU=testU, setseed=120, imbalanced=T, OptMethod = "kf")
+# predict categorical responses
 out$pred
 ````
