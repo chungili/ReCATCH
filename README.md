@@ -13,7 +13,7 @@ library(devtools)
 ```{R}
 install_github("chungili/ReCATCH")
 ````
-# An simulated example
+# A simulated data
 ```{R}
 # Generate a training dataset
 set.seed(123)
