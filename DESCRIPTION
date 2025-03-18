@@ -1,0 +1,12 @@
+Package: ReCatch
+Title: Regularized Covariate-Adjusted Tensor Classification in High Dimensions
+Version: 1.0.0
+Author: person("Chung-I", "Li", , "cili@ncku.edu.tw", role = c("aut", "cre"))
+Maintainer: The package maintainer <cili@ncku.edu.tw>
+Description: This algorithm ingegrates the concepts from both regularized discrimant and ridge regression analysis into the covariate-adjusted tensor classification in high-dimensions (CATCH) model.
+License: What license is it under?
+Imports: catch, tensr, rTensor, MASS, foreach, doSNOW, caret, iterators, parallel, datasets
+Data: CRC.RData, breast.RData
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.2
