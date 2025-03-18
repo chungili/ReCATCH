@@ -13,7 +13,7 @@ library(devtools)
 ```{R}
 install_github("chungili/ReCATCH")
 ````
-# An example
+# An simulated example
 ```{R}
 # Generate a training dataset
 set.seed(123)
@@ -30,3 +30,26 @@ out<-ReCatch(x=x, U=U, y=y, testx=testx, testU=testU, setseed=120, imbalanced=T,
 # predict categorical responses
 out$pred
 ````
+# Real Dataset: Breast Cancer
+```{R}
+data("breast")
+help(breast)
+# test for homogeneity of covariance matrices 
+library(heplots)
+res <- boxM(trainU, trainOP)
+# fit CATCH model
+library(catch)
+set.seed(1234)
+catch.lambda <- cv.catch(x = trainX, z = trainU, y = trainOP, nfolds = 4)$lambda.min
+fit.catch <- catch(x=trainX, z = trainU, y = trainOP,
+             testx = testX, testz = testU, lambda = catch.lambda)
+library(caret)
+CM.catch <- confusionMatrix(factor(fit.catch$pred), factor(testOP), positive = "2")
+round(c(CM.catch$overall["Accuracy"], CM.catch$byClass[c("Recall", "Precision", "F1")]), 2)
+# fit CATCH+ model
+fit.CatchPlus <- CatchPlus(x = trainX, U = trainU, y = trainOP,
+                     testx = testX, testU = testU, testy = testOP,
+                     setseed = 1234, imbalanced = FALSE, n.folds = 4)
+CM.CatchPlus <- confusionMatrix(factor(fit.CatchPlus$pred), factor(testOP), positive = "2")
+round(c(CM.CatchPlus$overall["Accuracy"], CM.CatchPlus$byClass[c("Recall", "Precision", "F1")]), 2)
+```
