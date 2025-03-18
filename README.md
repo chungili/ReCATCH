@@ -66,7 +66,7 @@ library(caret)
 library(MASS)
 # To decrease computational expenses, 
 # the number of iterations is set to 10
-B <- 100
+B <- 10
 res_ReCATCH <- matrix(NA, B, 4)
 res_CATCH <- res_ReCATCH
 N <- length(recurrence)
