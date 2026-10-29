@@ -60,7 +60,7 @@ data("CRC")
 help(CRC)
 # Tests for Homogeneity of Covariance Matrices
 library(covTestR)
-Srivastava2014(list(DE[recurrence==1,], DE[recurrence==2,]))#
+Srivastava2014(list(DE[recurrence==1,], DE[recurrence==2,]))
 # Calculate the performance metrics based on random splits 
 library(caret)
 library(MASS)
